@@ -1,0 +1,119 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "1";
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "2";
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "3";
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "0";
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "4";
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "5";
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "6";
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "7";
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "8";
+
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = MatKhau.Text + "9";
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            MatKhau.Text = "";
+        }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            if (MatKhau.TextLength < 5)
+            {
+                int matkhau = int.Parse(MatKhau.Text);
+
+                if (matkhau == 1980 || matkhau == 1982)
+                {
+                    DateTime t = DateTime.Now;
+                    NhatKy.Text += t.ToShortDateString() + " " + t.ToLongTimeString() + "    Kỹ thuật \n";
+                }
+                else if (matkhau > 2008 && matkhau <= 2010)
+                {
+                    DateTime t = DateTime.Now;
+                    NhatKy.Text += t.ToShortDateString() + " " + t.ToLongTimeString() + "    Quản lý \n";
+                }
+                else if (matkhau == 9998 || (matkhau >= 1006 && matkhau <= 1008))
+                {
+                    DateTime t = DateTime.Now;
+                    NhatKy.Text += t.ToShortDateString() + "  " + t.ToLongTimeString() + "    Khoa học \n";
+                }
+                else if (matkhau >= 0 && matkhau <= 9)
+                {
+                    DateTime t = DateTime.Now;
+                    NhatKy.Text += t.ToShortDateString() + "  " + t.ToLongTimeString() + "    Restricted Access \n";
+                }
+                else
+                {
+                    DateTime t = DateTime.Now;
+                    NhatKy.Text += t.ToShortDateString() + "  " + t.ToLongTimeString() + "    Access denied \n";
+                }
+            }
+            else
+            {
+
+                DateTime t = DateTime.Now;
+                NhatKy.Text += t.ToShortDateString() + "  " + t.ToLongTimeString() + "    Access denied\n";
+            }
+
+            MatKhau.Text = "";
+
+        }
+    }
+}
