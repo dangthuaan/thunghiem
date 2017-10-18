@@ -1,0 +1,67 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication1{
+    public partial class FormTTKR : Form
+    {
+        public FormTTKR()
+        {
+            InitializeComponent();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+                    }
+
+        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTinhtien_Click(object sender, EventArgs e)
+        {
+            int sum = 0;
+            if (TenKhachHang.Text != "")
+            {
+                if (BoxCaovoi.Checked == true)
+                    sum += 100000;
+                if (BoxTaytrang.Checked == true)
+                    sum += 1200000;
+                if (BoxChuphinh.Checked == true)
+                    sum += 150000;
+                if (BoxLaycao.Checked == true)
+                    sum += 100000;
+
+                sum += (int)HanRang.Value * 90000;
+
+                TongTien.Text = sum.ToString();
+            }
+            else
+            {
+                MessageBox.Show("Hãy điền tên khách hàng!","information",MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void BoxCaovoi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HanRang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TongTien_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
