@@ -156,6 +156,42 @@ public class HierarchicalModeling2D extends JPanel {
       drawCloud(g2);
       g2.setTransform(saveTr);
       
+      g2.scale(0.3,0.3);
+      drawHouse(g2);
+      g2.setTransform(saveTr);
+      
+      g2.scale(0.3,0.3);
+      Hangrao(g2);
+      g2.setTransform(saveTr);
+      
+      g2.scale(0.3,0.3);
+      Flower(g2);
+      g2.setTransform(saveTr);
+      
+      g2.translate(5.87,1.38 );
+	  g2.scale(0.2, 0.2);
+	  BongHoa(g2);
+	  g2.setTransform(saveTr);
+	  
+	  g2.translate(6.16,1.44 );
+	  g2.scale(0.2, 0.2);
+	  BongHoa(g2);
+	  g2.setTransform(saveTr);
+	  
+	  g2.translate(5.32,1.2);
+	  g2.scale(0.2, 0.2);
+	  BongHoa(g2);
+	  g2.setTransform(saveTr);
+	  
+	  g2.translate(5.52,1.2);
+	  g2.scale(0.2, 0.2);
+	  BongHoa(g2);
+	  g2.setTransform(saveTr);
+	  
+	  g2.translate(6.75,1.82 );
+	  g2.scale(0.4, 0.4);
+	  BongHoa(g2);
+	  g2.setTransform(saveTr);
             
       /* Draw the cart.  The drawCart method draws the cart with the center of its base at
        * (0,0).  The body of the cart is 5 units long and 2 units high.  A scale is first
@@ -196,12 +232,12 @@ public class HierarchicalModeling2D extends JPanel {
      
       
       g2.translate(6 - 13*(frameNumber % 300) / 300.0, 0.2);
-      g2.scale(0.2,0.2);
+      g2.scale(0.25,0.25);
       drawCart2(g2);
       g2.setTransform(saveTr);
       
-      g2.translate(5 + 13*(frameNumber % 300) / 300.0, -0.2);
-      g2.scale(0.2,0.2);
+      g2.translate(-3 + 13*(frameNumber % 300) / 300.0, -0.1);
+      g2.scale(0.25,0.25);
       drawCart(g2);
       g2.setTransform(saveTr);
       //oto2
@@ -296,15 +332,8 @@ public class HierarchicalModeling2D extends JPanel {
           drawVay(g2);
           g2.setTransform(saveTr);
       } 
-   
-      
-     /* else {
-    	  g2.translate(x2, -2);
-	      g2.scale(1.2,1);
-	      drawBoy(g2);
-	      g2.setTransform(saveTr);
-    	  } */
-	  } 
+   }
+
    
    
    
@@ -357,9 +386,9 @@ public class HierarchicalModeling2D extends JPanel {
     */
    private void drawSun(Graphics2D g2) {
       g2.setColor(Color.YELLOW);
-      g2.fill( new Ellipse2D.Double(-0.5,-0.5,1,1) );  // The sun itself.
+      g2.fill( new Ellipse2D.Double(0,0,0.55,0.5) );  // The sun itself.
       g2.setColor( new Color(0xDD8800) );
-      g2.draw( new Ellipse2D.Double(-0.5,-0.5,1,1) );
+      g2.draw( new Ellipse2D.Double(0,0,0.55,0.5) );
       
    
    }
@@ -393,17 +422,7 @@ public class HierarchicalModeling2D extends JPanel {
     * on the frame number is applied to the whole set of vanes, which causes the windmill
     * to rotate as the animation proceeds.
     */
-   private void drawWindmill(Graphics2D g2) {
-	      g2.setColor(new Color(225,200,200));
-	      g2.fill(new Rectangle2D.Double(-0.05,0,0.1,3));
-	      g2.translate(0,3);  // Translations to move the vanes to the top of the pole.
-	      g2.rotate(frameNumber/23.0); // Apply an overall rotation to the set of 3 vanes.
-	      g2.setColor(new Color(0xAA9999));
-	      for (int i = 0; i < 3; i++) {
-	         g2.rotate(2*Math.PI/3);  // Note: these rotations accumulate!
-	         g2.fill(windmillVane);   // Vane is subject to a rotation!
-	      }
-	   }
+
    
    /**
     * Draw a cart consisting of a rectangular body and two wheels.  The wheels
@@ -413,6 +432,99 @@ public class HierarchicalModeling2D extends JPanel {
     * center of the bottom of the rectangle is at (0,0).  The top of the car is
     * a smaller red rectangle on top of that one.
     */
+   
+   
+   private void drawHouse(Graphics2D g2) {
+	   g2.setColor(Color.GRAY);
+	   g2.fill(new Rectangle2D.Double(2,2.66,6,8)); //khối nhà
+	   
+	   int [ ] x = {5,2,8};
+	   int [ ] y = {12,11,11};
+	   g2.fillPolygon(x, y, 3); //mái nhà
+	   
+	   g2.setColor(Color.GREEN);
+	   g2.fill(new Rectangle2D.Double(1.8,6.66,6.4,0.35));//thanh chia 2 tầng
+	   g2.fill(new Rectangle2D.Double(1.8,10.66,6.4,0.35));
+	   
+	   g2.fill(new Rectangle2D.Double(3,2.66,4,3));//cửa tầng 1
+	   
+	   g2.fill(new Rectangle2D.Double(3,7,1.8,2.6));//cửa tầng 
+	   
+	   g2.fill(new Rectangle2D.Double(5.5,7.8,1.8,1.8));//cửa sổ tầng 2
+	   g2.setColor(Color.WHITE);
+	   g2.fill(new Rectangle2D.Double(5.5,8.6,1.8,0.1));
+	   g2.fill(new Rectangle2D.Double(6.35,7.8,0.1,1.8));
+	   
+	   g2.setColor(Color.WHITE);
+	   g2.fill(new Rectangle2D.Double(3.85,7,0.1,2.6));//khóa cửa tầng 2
+	   g2.fill(new Ellipse2D.Double(3.81,8.2,0.2,0.2));
+	   
+	   
+	   g2.fill(new Rectangle2D.Double(5,2.66,0.1,3));//khóa cửa tầng 1
+	   g2.fill(new Ellipse2D.Double(4.96,4,0.2,0.2));
+	   
+	   g2.setColor(Color.RED);//lan can
+	   g2.draw(new Rectangle2D.Double(1.8,7,1.6,1));
+	   g2.draw(new Rectangle2D.Double(3.4,7,1.6,1));
+	   g2.draw(new Rectangle2D.Double(5,7,1.6,1));
+	   g2.draw(new Rectangle2D.Double(6.6,7,1.6,1));
+	   
+	   
+	   
+   }
+   
+   private void Hangrao(Graphics2D g2) {
+	   g2.setColor(Color.CYAN);
+	   g2.fill(new Rectangle2D.Double(11.2,2.66,1.5,6));//vẽ cây 1
+	   g2.fill(new Ellipse2D.Double(9,6.5,3,3));
+	   g2.fill(new Ellipse2D.Double(10,7,4,4));
+	   g2.fill(new Ellipse2D.Double(11.8,6.5,3,3));
+	   
+	   g2.setColor(Color.GREEN);
+	   g2.fill(new Rectangle2D.Double(15,2.66,1.5,4));//vẽ cây 2
+	   g2.fill(new Ellipse2D.Double(13.4,4.5,2,2));
+	   g2.fill(new Ellipse2D.Double(14.3,5.3,3,3));
+	   g2.fill(new Ellipse2D.Double(16,4.5,2,2));
+	   
+	   g2.fill(new Arc2D.Double(6.5,0.16,3,5, 270, 90, Arc2D.PIE));
+	   g2.fill(new Arc2D.Double(8.5,0.4,5,4.5, 180, 180 , Arc2D.PIE));
+	   g2.fill(new Arc2D.Double(13,1.7,3,2, 180, 180 , Arc2D.PIE));
+	   
+	   
+	   g2.setColor(Color.RED);
+	   g2.draw(new Rectangle2D.Double(8,2.66,3,2)); //vẽ hàng rào
+	   g2.draw(new Rectangle2D.Double(11,2.66,3,2));
+	   g2.draw(new Rectangle2D.Double(14,2.66,3,2));
+	   
+	   
+   }
+   
+   private void Flower(Graphics2D g2) {
+	   g2.setColor(Color.BLACK);
+	   g2.draw(new QuadCurve2D.Double(17.8,4,18,3,18.2,2.66));
+	   g2.draw(new QuadCurve2D.Double(18.4,4,18,3,18.2,2.66));
+	   
+	   
+	   g2.draw(new QuadCurve2D.Double(19.5,4.66,20,4,20.2,2.66));
+	   g2.draw(new QuadCurve2D.Double(20.5,4.66,20,4,20.2,2.66));
+	   
+	   g2.draw(new QuadCurve2D.Double(22.5,6,23,5,23.2,2.66));
+   }
+	
+   private void BongHoa(Graphics2D g2) {
+	   //g2.fill(new Ellipse2D.Double(18,4,0.18,0.18));
+	   
+	   for (int i = 0; i < 6; i++) {  // draw 15 spokes
+	      g2.rotate(2*Math.PI/6);
+	      g2.setColor(Color.PINK);
+	      
+	      g2.fill( new Ellipse2D.Double(0,-0.1,0.5,0.2) );
+	      }
+	   g2.setColor(Color.white);
+	   g2.fill( new Ellipse2D.Double(-0.2,-0.2,0.4,0.4) );
+	
+   }
+   
    
    private void drawCart(Graphics2D g2) {
       AffineTransform tr = g2.getTransform();  // save the current transform
@@ -686,7 +798,26 @@ public class HierarchicalModeling2D extends JPanel {
    private void skystar(Graphics2D g2) {
 	   AffineTransform saveTr = g2.getTransform();
 	   
-	 
+	   g2.translate(-2, -4);
+	   g2.scale(1.2, 1.2);
+	   star(g2);
+	   g2.setTransform(saveTr);
+	   
+	   g2.translate(-6, -3);
+	   g2.scale(1.2, 1.2);
+	   star(g2);
+	   g2.setTransform(saveTr);
+	   
+	   g2.translate(6, 3);
+	   g2.scale(1.2, 1.2);
+	   star(g2);
+	   g2.setTransform(saveTr);
+	   
+	   g2.translate(5, 3);
+	   g2.scale(1.2, 1.2);
+	   star(g2);
+	   g2.setTransform(saveTr);
+	  
 	   g2.translate(1, 1);
 	   g2.scale(1.2, 1.2);
 	   star(g2);
