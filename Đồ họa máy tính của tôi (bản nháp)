@@ -241,14 +241,56 @@ public class HierarchicalModeling2D extends JPanel {
 	      g2.setTransform(saveTr);
       }
 	      
-    else if(x>=0.5&&x<0.65) {
+    else if(x>=0.5&&x<3) {
 		  
 			  g2.translate(0.5, -2);
 		      g2.scale(1.2,1);
 		      drawBoy(g2);    
 		      g2.setTransform(saveTr);
+		      
+		 if (x>=0.6 && x<0.8) {
+			 g2.setColor(Color.WHITE);
+	   	   	 g2.fill( new Ellipse2D.Double(0.04,1,1.2,0.8) );
+
+	   	   	 g2.setColor(Color.BLACK);
+	   	   	 g2.setFont(new Font("Arial", Font.PLAIN, 9));
+	   	   	 g2.scale(0.03, -0.03);
+	   	   	 g2.drawString("Chào em", 3, -42);
+		     g2.setTransform(saveTr);
+		      }
+		 if (x>=0.8 && x<1.4) {
+			 g2.setColor(Color.WHITE);
+	   	   	 g2.fill( new Ellipse2D.Double(3.4,0.7,1.5,0.8) );
+
+	   	   	 g2.setColor(Color.BLACK);
+	   	   	 g2.setFont(new Font("Arial", Font.PLAIN, 9));
+	   	   	 g2.scale(0.03, -0.03);
+	   	   	 g2.drawString("Chào anh", 120, -34);
+		     g2.setTransform(saveTr);
+		      }
+		 if (x>=1.4 && x<2) {
+			 g2.setColor(Color.WHITE);
+	   	   	 g2.fill( new Ellipse2D.Double(-0.05,0.8,1.2,1) );
+
+	   	   	 g2.setColor(Color.BLACK);
+	   	   	 g2.setFont(new Font("Arial", Font.PLAIN, 6));
+	   	   	 g2.scale(0.03, -0.03);
+	   	   	 g2.drawString("Chúng mình", 5, -45);
+	   	   	 g2.drawString("đi thôi!", 6, -35);
+		     g2.setTransform(saveTr);
+		 }
+		 if (x>=2 && x<3) {
+			 g2.setColor(Color.WHITE);
+	   	   	 g2.fill( new Ellipse2D.Double(3.4,0.7,1.5,0.8) );
+
+	   	   	 g2.setColor(Color.BLACK);
+	   	   	 g2.setFont(new Font("Arial", Font.PLAIN, 9));
+	   	   	 g2.scale(0.03, -0.03);
+	   	   	 g2.drawString("Vâng ạ!", 120, -34);
+		     g2.setTransform(saveTr);
+		 }
 		  }
-      else if(x>=0.65)
+      else if(x>=3)
       {
     	  g2.translate(x1, -2);
 	      g2.scale(1.2,1);
@@ -263,7 +305,7 @@ public class HierarchicalModeling2D extends JPanel {
           drawVay(g2);
           g2.setTransform(saveTr); 
       }
-      if(x<=0.65)
+      if(x<=0.65 || x>=0.5&&x<3)
       {
     	  g2.translate(0.5,-2);
           g2.scale(1.2,1);
