@@ -156,6 +156,10 @@ public class HierarchicalModeling2D extends JPanel {
        * its size and then translated to move its base to a different paint.  In the animation,
        * the vanes of the windmill rotate.  That rotation is done with a transform inside the
        * drawWindmill method. */
+      g2.translate(-3 + 6*(frameNumber % 300) / 300.0, 0.1);
+      g2.scale(0.3,0.3);
+      drawCloud(g2);
+      g2.setTransform(saveTr);
       
       g2.translate(0.75,1);
       g2.scale(0.6,0.6);
@@ -207,11 +211,7 @@ public class HierarchicalModeling2D extends JPanel {
       skystar(g2);
       g2.setTransform(saveTr);
       
-      
-      g2.translate(-3 + 6*(frameNumber % 300) / 300.0, 0.1);
-      g2.scale(0.3,0.3);
-      drawCloud(g2);
-      g2.setTransform(saveTr);
+
      
       
       g2.translate(6 - 13*(frameNumber % 300) / 300.0, 0.2);
@@ -231,9 +231,8 @@ public class HierarchicalModeling2D extends JPanel {
       g2.setTransform(saveTr);*/
       
       float x = (float) ( -3 + 13*(frameNumber % 300) / 300.0);
-      float x1 = (float) ( -3 + 13*(frameNumber % 300) / 300.0);
-      
-      float x2 = (float) (0.5 + 6*(frameNumber % 510) / 300.0);
+      float x1 = (float) ( -7 + 13*(frameNumber % 300) / 300.0);
+     
       if (x < (0.5)) {
 	      g2.translate(x, -2);
 	      g2.scale(1.2,1);
@@ -241,14 +240,14 @@ public class HierarchicalModeling2D extends JPanel {
 	      g2.setTransform(saveTr);
       }
 	      
-    else if(x>=0.5&&x<3) {
+    else if(x>=0.5&&x<4.5) {
 		  
 			  g2.translate(0.5, -2);
 		      g2.scale(1.2,1);
 		      drawBoy(g2);    
 		      g2.setTransform(saveTr);
 		      
-		 if (x>=0.6 && x<0.8) {
+		 if (x>=0.5 && x<1.5) {
 			 g2.setColor(Color.WHITE);
 	   	   	 g2.fill( new Ellipse2D.Double(0.04,1,1.2,0.8) );
 
@@ -258,7 +257,7 @@ public class HierarchicalModeling2D extends JPanel {
 	   	   	 g2.drawString("Chào em", 3, -42);
 		     g2.setTransform(saveTr);
 		      }
-		 if (x>=0.8 && x<1.4) {
+		 if (x>=1.5 && x<2.5) {
 			 g2.setColor(Color.WHITE);
 	   	   	 g2.fill( new Ellipse2D.Double(3.4,0.7,1.5,0.8) );
 
@@ -268,7 +267,7 @@ public class HierarchicalModeling2D extends JPanel {
 	   	   	 g2.drawString("Chào anh", 120, -34);
 		     g2.setTransform(saveTr);
 		      }
-		 if (x>=1.4 && x<2) {
+		 if (x>=2.5 && x<3.5) {
 			 g2.setColor(Color.WHITE);
 	   	   	 g2.fill( new Ellipse2D.Double(-0.05,0.8,1.2,1) );
 
@@ -279,7 +278,7 @@ public class HierarchicalModeling2D extends JPanel {
 	   	   	 g2.drawString("đi thôi!", 6, -35);
 		     g2.setTransform(saveTr);
 		 }
-		 if (x>=2 && x<3) {
+		 if (x>=3.5 && x<4.5) {
 			 g2.setColor(Color.WHITE);
 	   	   	 g2.fill( new Ellipse2D.Double(3.4,0.7,1.5,0.8) );
 
@@ -290,7 +289,7 @@ public class HierarchicalModeling2D extends JPanel {
 		     g2.setTransform(saveTr);
 		 }
 		  }
-      else if(x>=3)
+      else if(x>=4.5)
       {
     	  g2.translate(x1, -2);
 	      g2.scale(1.2,1);
@@ -305,7 +304,7 @@ public class HierarchicalModeling2D extends JPanel {
           drawVay(g2);
           g2.setTransform(saveTr); 
       }
-      if(x<=0.65 || x>=0.5&&x<3)
+      if(x<=0.65 || x>=0.5&&x<4.5)
       {
     	  g2.translate(0.5,-2);
           g2.scale(1.2,1);
@@ -558,6 +557,14 @@ public class HierarchicalModeling2D extends JPanel {
    			
    			g2.fill(new Rectangle2D.Double(0.75,2.5,0.12,0.2)); //cổ
    			g2.fill(new Ellipse2D.Double(0.55,2.67,0.5,0.6)); //mặt
+   			
+   			g2.setColor(Color.WHITE);
+   			g2.fill(new Ellipse2D.Double(0.75,2.9,0.05,0.05));//mắt
+   			g2.fill(new Ellipse2D.Double(0.95,2.9,0.05,0.05));
+   			
+   			g2.fill(new Arc2D.Double(0.83,2.75,0.1,0.12, 0,180 , Arc2D.OPEN)); //miệng
+   			
+   			
    			g2.setColor(Color.WHITE);
    			g2.fill(new Arc2D.Double(0.55,2.67,0.5,0.6, -180,180 , Arc2D.CHORD));
    			
@@ -603,6 +610,12 @@ public class HierarchicalModeling2D extends JPanel {
    			g2.setColor(Color.BLACK);
    			g2.fill(new Rectangle2D.Double(1.95,2.5,0.12,0.2)); //cổ
    			g2.fill(new Ellipse2D.Double(1.75,2.67,0.5,0.6)); //mặt
+   			
+   			g2.setColor(Color.WHITE);
+   			g2.fill(new Ellipse2D.Double(1.8,2.9,0.05,0.05));//mắt
+   			g2.fill(new Ellipse2D.Double(2,2.9,0.05,0.05));
+   			
+   			g2.fill(new Arc2D.Double(1.9,2.75,0.1,0.12, 0,180 , Arc2D.OPEN)); //miệng
    			
    			g2.setColor(Color.GREEN);
    			g2.fill(new Arc2D.Double(1.75,2.67,0.5,0.6, -180,180 , Arc2D.CHORD));
