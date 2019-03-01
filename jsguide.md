@@ -49,6 +49,7 @@ Javascript sử dụng ***từ khóa(keyword)*** `let` để ***khai báo(declar
 > ***Các từ khóa(keywords)*** sử dụng để tạo nhãn cho hành động muốn thực thi
 
 ***Toán tử gán(assignment operator)***: dấu ***=*** được sử dụng để ***gán(assign)*** một ***giá trị(value)*** cho một ***biến(variable)***
+
 > Công việc này còn được gọi là ***Khởi tạo giá trị cho một biến(Initializing a variable)***
 
 ```js
