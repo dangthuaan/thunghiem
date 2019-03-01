@@ -161,7 +161,7 @@ Lệnh ***trả về(return)*** sẽ yêu cầu chương trình dừng dòng l�
 
 ### Identifier
 
-***Định danh(indentifiers)*** chính là các ***tên(names)*** sử dụng để đặt tên cho ***biến(variable)***, ***từ khóa(keyword)***, ***hàm(function)***,...
+***Định danh(indentifiers)*** chính là các ***tên(names)*** sử dụng để đặt tên cho ***biến(variable)*** , ***từ khóa(keyword)*** , ***hàm(function)*** ,...
 
 Đặt tên ***định danh(indentifier)*** bằng các nguyên tắc: 
 * ***Tên(hay Định danh)*** chỉ được phép chứa **chữ cái**, **chữ số**, và 2 ký tự đặc biệt là **$** và **_** 
